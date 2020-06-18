@@ -17,7 +17,7 @@ Use this template to automatically deploy your [reveal-md](https://github.com/we
 * choose 'gh-pages' to be the public-branch by:
   * first switching to master
   * and then switching back to gh-pages
-  * github-Bug? ¯\_(ツ)_/¯
+  * github-Bug? ¯\\_(ツ)_/¯
 
 ![settings](img/2_settings.png)
 
