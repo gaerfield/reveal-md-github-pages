@@ -22,6 +22,7 @@ jobs:
         run: |
           npm install --no-optional reveal-md
           mkdir build
+          cp -r img build/
           ./node_modules/.bin/reveal-md --preprocessor includes.js --css custom.css --static build slides.md
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
