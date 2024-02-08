@@ -5,44 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <title>reveal-md deployed to gh-pages</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
     <link rel="stylesheet" href="./dist/reveal.css" />
     <link rel="stylesheet" href="./dist/theme/solarized.css" id="theme" />
-    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
-    <link rel="stylesheet" href="./_assets/custom.css" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+    <link rel="stylesheet" href="./_assets/./custom.css" />
 
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"><section  data-markdown><script type="text/template">
+      <div class="slides">
+        <section data-markdown data-separator="<!--s-->" data-separator-vertical="<!--v-->">
+          <textarea data-template>
+            
 
 # reveal-md & github-pages
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 ## github-pages + reveal-md = awesome
 
 * write your slides in markdown <!-- .element: class="fragment" data-fragment-index="0" -->
 * commit them to github <!-- .element: class="fragment" data-fragment-index="1" -->
 * get them automatically deployed <!-- .element: class="fragment" data-fragment-index=2" -->
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 ## get started
 
 * just press this nice & friendly green button
 ![nice & friendly green button](img/1_pressButton.png)
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 ## get started
 
 * give your new repo a name
 * keep it public! (or git will deny to publish it)
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 ## get started
 
 * choose 'gh-pages' to be the public-branch
 ![settings](img/2_settings.png)
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 ## get started
 
 * choose 'gh-pages' to be the public-branch by:
@@ -50,28 +56,28 @@
   * and then switching back to gh-pages
   * github-bug? ¯\\_(ツ)_/¯
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 ![settings](img/3_selectBranch.png)
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 ## writing content
 
 * edit the markdown-file `slides.md`
 * find all configurations on [reveal-md](https://github.com/gaerfield/reveal-md-github-pages)
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 ## Customizations
 
 * I changed a whee-bit the defaults
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 ## Customizations - CSS
 
 * custom.css has some additional configs (who needs borders around pictures)
 * just remove the content, if it not suits you
 * but keep the file, or the build will fail
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 ## Customizations - includes
 
 * the presentation is split up into multiple documents
@@ -80,7 +86,7 @@
 
    `{{path/to/include.md}}`
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 ## Customizations - plantuml
 
 * I really like diagrams
@@ -94,13 +100,13 @@ will become
 
 <img src='https://g.gravizo.com/svg?@startuml;A -> B;@enduml'/>
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 ## Customizations - plantuml
 
 * check [plantuml](https://plantuml.com/) for more details
 * or even better: [the hitchhikers guide to plantuml](https://crashedmind.github.io/PlantUMLHitchhikersGuide/)
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 ## Customizations
 
 * included scripts are configured in includes.js
@@ -111,13 +117,16 @@ will become
 * I know, they are open-source, but they are also crappy
 * Me not good is in javascript
 
-</script></section><section  data-markdown><script type="text/template">
+<!--s-->
 
 # The End
 
 have fun ;)
 
-</script></section></div>
+
+          </textarea>
+        </section>
+      </div>
     </div>
 
     <script src="./dist/reveal.js"></script>
@@ -148,6 +157,7 @@ have fun ;)
         history: true,
         center: true,
         transition: 'default', // none/fade/slide/convex/concave/zoom
+        slideNumber: true,
         plugins: [
           RevealMarkdown,
           RevealHighlight,
@@ -160,7 +170,7 @@ have fun ;)
       // options from URL query string
       var queryOptions = Reveal().getQueryHash() || {};
 
-      var options = extend(defaultOptions, {"controls":false,"slideNumber":false,"transition":"slide","backgroundTransition":"fade"}, queryOptions);
+      var options = extend(defaultOptions, {"controls":false,"slideNumber":false,"transition":"slide","backgroundTransition":"fade","_":["./slides.md"],"preprocessor":"../../../includes.js","css":"./custom.css","static":"build"}, queryOptions);
     </script>
 
 
