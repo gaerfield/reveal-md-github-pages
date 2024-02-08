@@ -6,8 +6,6 @@ services:
     stop_grace_period: 1s
     volumes:
       - ./:/slides
-        #      - ./scripts:/app/lib/scripts
-        #      - ./includes.js:/app/lib/includes.js
     ports:
       - 1948:1948
     working_dir: /slides
